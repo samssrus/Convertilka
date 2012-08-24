@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Конвертилка</string>
+    <string name="menu_settings">Настройки</string>
+    <string name="title_activity_main">Конвертилка</string>
+	<string name="btnConvertCaption">Конвертировать</string>
+    <string name="lblConvertCaption">Конвертировать текст</string>
+    <string name="prefSafeModeTitle">Безопасный режим</string>
+    <string name="prefSafeModeSummaryText">Безопасный режим - только символы (из текста удаляются {[:~,.]})</string>
+    <string name="prefs">Настройки</string>
+    <string name="about">О программе</string>
+    <string name="exit">Выход</string>
+    <string name="about_text">Конвертилка\nВерсия 1.0\n2012 Лобко С.В.\nПрограмма конвертирует кирилические символы в латинские в соответствии с раскладкой русской клавиатуры.\nЭто не транслит.</string>
+    <string name="conv_result">Результат:</string>
+    <string name="convertingMode">Режим конвертирования</string>
+</resources>

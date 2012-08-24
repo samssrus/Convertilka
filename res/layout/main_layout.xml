@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/lblConvert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/lblConvertCaption"
+            android:textSize="20dp" 
+            />
+        
+        <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/txtConvert"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:inputType="text" 
+            android:layout_weight="2">
+            <requestFocus />
+        </EditText>
+
+        <ImageButton
+            android:id="@+id/btnConvert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/btnConvertCaption"
+            android:src="@drawable/ic_launcher" 
+            android:background="@null"
+            android:onClick="onConvert"/>
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

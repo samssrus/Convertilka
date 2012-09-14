@@ -11,16 +11,16 @@ package ru.lobko.slava.convertilka;
  * Небезопасный режим - "Б" в ">" или "Ъ" в "}" или "жаба" в ";f,f" 
  * Безопасный режим   - "Б" в ""  или "Ъ" в ""  или "жаба" в "ff" 
  * @author samssrus (Svyatoslav Lobko)
- * @version 0.1.0
+ * @version 0.1.1
  */
 
 public class Cyr2Lat {
 
 	private static String rus = new String("ЙйЦцУуКкЕеНнГгШшЩщЗзХхЪъФфЫыВвАаПпРрОоЛлДдЖжЭэЯяЧчСсМмИиТтЬьБбЮюЁё");
 	private static char[] eng = {'Q','q','W','w','E','e','R','r','T','t','Y','y','U','u','I','i','O','o','P','p','{','[','}',']',
-		'A','a','S','s','D','d','F','f','G','g','H','h','J','j','K','k','L','l',':',';','\'','"',
+		'A','a','S','s','D','d','F','f','G','g','H','h','J','j','K','k','L','l',':',';','\"','\'',
 		'Z','z','X','x','C','c','V','v','B','b','N','n','M','m','<',',','>','.','~','`'};
-	private static String notSafe = "([\"'<>,\\.;\\{\\}\\[\\]~`'])";
+	private static String notSafe = "([\"'<>,\\.;:\\{\\}\\[\\]~`'])";
 	
 	public Cyr2Lat(){}//end constructor
 	

@@ -8,5 +8,21 @@
 	android:summary="@string/prefSafeModeSummaryText"
 	android:defaultValue="true"/>    
     </PreferenceCategory>
-
+    
+    <PreferenceCategory android:title="@string/showSource" >
+        <CheckBoxPreference
+    android:key="showSource"
+    android:title="@string/prefShowSourceTitle"
+	android:summary="@string/prefShowSourceSummaryText"
+	android:defaultValue="true"/>    
+    </PreferenceCategory>
+	
+    <PreferenceCategory android:title="@string/passMode" >
+        <CheckBoxPreference
+    android:key="passMode"
+    android:title="@string/prefPassModeTitle"
+	android:summary="@string/prefPassModeSummaryText"
+	android:defaultValue="false"/>    
+    </PreferenceCategory>
+    
 </PreferenceScreen>

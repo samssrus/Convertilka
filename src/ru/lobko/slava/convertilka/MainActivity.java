@@ -3,7 +3,7 @@ package ru.lobko.slava.convertilka;
 /**
  * Класс MainActivity. Отвечает за основное окно программы.
  * @author samssrus (Svyatoslav Lobko)
- * @version 0.1.0
+ * @version 0.1.1
  */
 
 import android.os.Bundle;
@@ -18,16 +18,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.ClipboardManager;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
 	private EditText txtConvert; // поле ввода
-	private boolean mode;				 //режим конвертирования
-
+	private TextView lblSource; // исходный текст
+	private boolean mode;		 //режим конвертирования
+	private boolean showSource; 	//режим отображения поля исходного текста
+	private boolean passMode; 		//режим отображения как пароль
+	
 	private static final int NOTIFY_ID = 101; // ид для всплавающих подсказок
 
 	private static final int IDM_PREFS = 201; // ид для меню НАСТРОЙКИ
@@ -44,6 +49,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);		
 		createUI();
+		clearFields();
 	}// end onCreate
 		
 	@Override
@@ -51,13 +57,33 @@ public class MainActivity extends Activity {
 		super.onResume();
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		mode = prefs.getBoolean("safeMode", true);
+		showSource = prefs.getBoolean("showSource", true);
+		passMode = prefs.getBoolean("passMode", false);
 	}//end onResume
-
+	
+	/**
+	 * процедура инициализации основных компонентов окна программы
+	 */
 	public void createUI() {
 		txtConvert = (EditText) findViewById(R.id.txtConvert);
+		if(!passMode){
+			txtConvert.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+		}else{
+			txtConvert.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
+		}		
+		lblSource = (TextView) findViewById(R.id.lblSource);
+		
 		mNotifyMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 	}// end create UI
+	
+	/**
+	 * процедура для очистки поля ввода и поля исходного текста
+	 */
+	protected void clearFields(){
+		txtConvert.setText("");
+		lblSource.setText("");
+	}//end clearFields
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
@@ -88,21 +114,32 @@ public class MainActivity extends Activity {
 		return true;
 	}// end onOptionsItemSelected
 	
+	/**
+	 * процедура вызова окна настроек
+	 */
 	private void showPrefs(){
 		Intent intent = new Intent();
 		intent.setClass(this, PreferencesActivity.class);
 		this.startActivity(intent);
 	}//end void showPrefs
 	
+	/**
+	 * процедура обработки нажатия на кнопку КОНВЕРТИРОВАТЬ 
+	 */
 	public void onConvert(View v){
 		String text = txtConvert.getText().toString();
 		if(text.length() <= 0) return;
 		String result = Cyr2Lat.convert(text, mode);
+		lblSource.setText(text);
+		lblSource.setVisibility(showSource ? View.VISIBLE : View.INVISIBLE);
 		txtConvert.setText(result);			
 		showNotification(result,getResources().getString(R.string.conv_result),result);
 		copy2clipboard(result);
     }//end void onConvert
 	
+	/**
+	 * процедура отображения результата в строке состояния
+	 */
 	private void showNotification(CharSequence tickerText, CharSequence contentTitle, CharSequence contentText) {
 		int icon = R.drawable.ic_launcher;
 		long when = System.currentTimeMillis();
@@ -132,10 +169,16 @@ public class MainActivity extends Activity {
         return dialog;
 	}//end function onCreateDialog
 	
+	/**
+	 * процедура копирования результата в буфер обмена
+	 */
 	private void copy2clipboard(String text) {
 		clipboard.setText(text);
 	}//end copy2clipboard
 	
+	/**
+	 * процедура выхода из программы
+	 */
 	private void onExit() {
     	super.onDestroy();
         this.finish();		

@@ -42,5 +42,16 @@
             android:background="@null"
             android:onClick="onConvert"/>
     </LinearLayout>
+    
+        <TextView
+            android:id="@+id/lblSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/lblSourceCaption"
+            android:textSize="20dp" 
+            android:visibility="invisible"
+            />
+        
 </LinearLayout>
 </LinearLayout>

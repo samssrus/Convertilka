@@ -14,5 +14,6 @@
     <string name="about">О программе</string>
     <string name="exit">Выход</string>
     <string name="about_text">Конвертилка\nВерсия 1.1\n2012 Лобко С.В.\nПрограмма конвертирует кирилические символы в латинские в соответствии с раскладкой русской клавиатуры.\nЭто не транслит.</string>
-    <string name="conv_result">Результат:</string>    
+    <string name="conv_result">Результат:</string> 
+    <string name="resultCopy2Clipboard">Результат скопирован в буфер обмена</string>   
 </resources>

@@ -14,5 +14,6 @@
     <string name="about">About</string>
     <string name="exit">Exit</string>
     <string name="about_text">Convertilka\nVersion 1.0\n2012 Lobko S.V.\nThe program converts the Cyrillic characters in Latin according to the Russian keyboard layout.\nThis is not transliteration.</string>
-    <string name="conv_result">Result</string>    
+    <string name="conv_result">Result</string>   
+    <string name="resultCopy2Clipboard">Result copy to clipboard</string>
 </resources>

@@ -3,7 +3,7 @@ package ru.lobko.slava.convertilka;
 /**
  * Класс MainActivity. Отвечает за основное окно программы.
  * @author samssrus (Svyatoslav Lobko)
- * @version 0.1.1
+ * @version 0.1.2
  */
 
 import android.os.Bundle;
@@ -28,26 +28,25 @@ public class MainActivity extends Activity {
 
 	private EditText txtConvert; 	//поле ввода
 	private boolean mode;		 	//режим конвертирования
-	private boolean showSource; 	//режим отображения поля исходного текста
 	private boolean passMode; 		//режим отображения как пароль
 	
 	private static final int NOTIFY_ID = 101; // ид для всплавающих подсказок
 
 	private static final int IDM_PREFS = 201; // ид для меню НАСТРОЙКИ
 	private static final int IDM_ABOUT = 202; // ид для меню О ПРОГРАММЕ
-	private static final int IDM_EXIT = 203; // ид для меню ВЫХОД
+	private static final int IDM_EXIT  = 203; // ид для меню ВЫХОД
 
 	private static final int DLG_ABOUT = 301; // ид для окна О ПРОГРАММЕ
 
-	private NotificationManager mNotifyMgr; // менеджер всплывающих подсказок
-	private ClipboardManager clipboard; // менеджер буфера обмена
+	private NotificationManager mNotifyMgr;   // менеджер всплывающих подсказок
+	private ClipboardManager clipboard; 	  // менеджер буфера обмена
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);		
-		createUI();
-		clearFields();
+		createUI(); 	//инициализировать основные компоненты программы
+		clearFields();  //очистить поле ввода
 	}// end onCreate
 		
 	@Override
@@ -56,6 +55,8 @@ public class MainActivity extends Activity {
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		mode = prefs.getBoolean("safeMode", true);
 		passMode = prefs.getBoolean("passMode", false);
+		//меняем тип поля в зависимости от нужного режима
+		txtConvert.setInputType(InputType.TYPE_CLASS_TEXT | (passMode ? InputType.TYPE_TEXT_VARIATION_PASSWORD : InputType.TYPE_TEXT_VARIATION_NORMAL));		
 	}//end onResume
 	
 	/**
@@ -63,19 +64,12 @@ public class MainActivity extends Activity {
 	 */
 	public void createUI() {
 		txtConvert = (EditText) findViewById(R.id.txtConvert);
-		/*
-		if(!passMode){
-			txtConvert.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
-		}else{
-			txtConvert.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
-		}	
-		*/	
 		mNotifyMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 	}// end create UI
 	
 	/**
-	 * процедура для очистки поля ввода и поля исходного текста
+	 * процедура для очистки поля ввода
 	 */
 	protected void clearFields(){
 		txtConvert.setText("");
@@ -126,9 +120,10 @@ public class MainActivity extends Activity {
 		String text = txtConvert.getText().toString();
 		if(text.length() <= 0) return;
 		String result = Cyr2Lat.convert(text, mode);
-		txtConvert.setText(result);			
-		showNotification(result,getResources().getString(R.string.conv_result),result);
+		txtConvert.setText(result);	
 		copy2clipboard(result);
+		String noteText = (passMode ? getResources().getString(R.string.resultCopy2Clipboard) : result);
+		showNotification(noteText,getResources().getString(R.string.conv_result),noteText);		
     }//end void onConvert
 	
 	/**

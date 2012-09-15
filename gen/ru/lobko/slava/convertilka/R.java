@@ -19,8 +19,7 @@ public final class R {
     public static final class id {
         public static final int btnConvert=0x7f080002;
         public static final int lblConvert=0x7f080000;
-        public static final int lblSource=0x7f080003;
-        public static final int menu_settings=0x7f080004;
+        public static final int menu_settings=0x7f080003;
         public static final int txtConvert=0x7f080001;
     }
     public static final class layout {
@@ -30,25 +29,23 @@ public final class R {
         public static final int main_layout=0x7f070000;
     }
     public static final class string {
-        public static final int about=0x7f05000d;
-        public static final int about_text=0x7f05000f;
+        public static final int about=0x7f05000c;
+        public static final int about_text=0x7f05000e;
         public static final int app_name=0x7f050000;
         public static final int btnConvertCaption=0x7f050003;
-        public static final int conv_result=0x7f050010;
-        public static final int convertingMode=0x7f050011;
-        public static final int exit=0x7f05000e;
+        public static final int conv_result=0x7f05000f;
+        public static final int exit=0x7f05000d;
         public static final int lblConvertCaption=0x7f050004;
-        public static final int lblSourceCaption=0x7f050005;
         public static final int menu_settings=0x7f050001;
-        public static final int passMode=0x7f050013;
-        public static final int prefPassModeSummaryText=0x7f05000b;
-        public static final int prefPassModeTitle=0x7f05000a;
+        public static final int prefConvertingMode=0x7f050010;
+        public static final int prefConvertingModeHeader=0x7f050005;
+        public static final int prefPassMode=0x7f050011;
+        public static final int prefPassModeHeader=0x7f050008;
+        public static final int prefPassModeSummaryText=0x7f05000a;
+        public static final int prefPassModeTitle=0x7f050009;
         public static final int prefSafeModeSummaryText=0x7f050007;
         public static final int prefSafeModeTitle=0x7f050006;
-        public static final int prefShowSourceSummaryText=0x7f050009;
-        public static final int prefShowSourceTitle=0x7f050008;
-        public static final int prefs=0x7f05000c;
-        public static final int showSource=0x7f050012;
+        public static final int prefs=0x7f05000b;
         public static final int title_activity_main=0x7f050002;
     }
     public static final class style {

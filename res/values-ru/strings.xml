@@ -4,19 +4,15 @@
     <string name="title_activity_main">Конвертилка</string>
 	<string name="btnConvertCaption">Конвертировать</string>
     <string name="lblConvertCaption">Конвертировать текст</string>
-    <string name="lblSourceCaption">* * *</string>
+	<string name="prefConvertingMode">Режим конвертирования</string>
     <string name="prefSafeModeTitle">Безопасный режим</string>
     <string name="prefSafeModeSummaryText">Безопасный режим - только буквы (из текста удаляются {[:~,.]})</string>
-    <string name="prefShowSourceTitle">Показывать исходный текст</string>
-    <string name="prefShowSourceSummaryText">отобразить поле с исходным текстом</string>
+	<string name="prefPassMode">Показывать как пароль</string>
     <string name="prefPassModeTitle">Показывать как пароль</string>
     <string name="prefPassModeSummaryText">скрывать результат за звездочками</string>
     <string name="prefs">Настройки</string>
     <string name="about">О программе</string>
     <string name="exit">Выход</string>
     <string name="about_text">Конвертилка\nВерсия 1.1\n2012 Лобко С.В.\nПрограмма конвертирует кирилические символы в латинские в соответствии с раскладкой русской клавиатуры.\nЭто не транслит.</string>
-    <string name="conv_result">Результат:</string>
-    <string name="convertingMode">Режим конвертирования</string>
-    <string name="showSource">Показывать исходный текст</string>
-    <string name="passMode">Показывать как пароль</string>
+    <string name="conv_result">Результат:</string>    
 </resources>

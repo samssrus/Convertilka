@@ -1,28 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
-    <PreferenceCategory android:title="@string/convertingMode" >
+    <PreferenceCategory android:title="@string/prefConvertingModeHeader" >
         <CheckBoxPreference
-    android:key="safeMode"
-    android:title="@string/prefSafeModeTitle"
-	android:summary="@string/prefSafeModeSummaryText"
-	android:defaultValue="true"/>    
+            android:defaultValue="true"
+            android:key="safeMode"
+            android:summary="@string/prefSafeModeSummaryText"
+            android:title="@string/prefSafeModeTitle" />
     </PreferenceCategory>
-    
-    <PreferenceCategory android:title="@string/showSource" >
+    <PreferenceCategory android:title="@string/prefPassModeHeader" >
         <CheckBoxPreference
-    android:key="showSource"
-    android:title="@string/prefShowSourceTitle"
-	android:summary="@string/prefShowSourceSummaryText"
-	android:defaultValue="true"/>    
+            android:defaultValue="false"
+            android:key="passMode"
+            android:summary="@string/prefPassModeSummaryText"
+            android:title="@string/prefPassModeTitle" />
     </PreferenceCategory>
-	
-    <PreferenceCategory android:title="@string/passMode" >
-        <CheckBoxPreference
-    android:key="passMode"
-    android:title="@string/prefPassModeTitle"
-	android:summary="@string/prefPassModeSummaryText"
-	android:defaultValue="false"/>    
-    </PreferenceCategory>
-    
+
 </PreferenceScreen>

@@ -23,13 +23,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 
 public class MainActivity extends Activity {
 
-	private EditText txtConvert; // поле ввода
-	private TextView lblSource; // исходный текст
-	private boolean mode;		 //режим конвертирования
+	private EditText txtConvert; 	//поле ввода
+	private boolean mode;		 	//режим конвертирования
 	private boolean showSource; 	//режим отображения поля исходного текста
 	private boolean passMode; 		//режим отображения как пароль
 	
@@ -57,7 +55,6 @@ public class MainActivity extends Activity {
 		super.onResume();
 		SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
 		mode = prefs.getBoolean("safeMode", true);
-		showSource = prefs.getBoolean("showSource", true);
 		passMode = prefs.getBoolean("passMode", false);
 	}//end onResume
 	
@@ -66,13 +63,13 @@ public class MainActivity extends Activity {
 	 */
 	public void createUI() {
 		txtConvert = (EditText) findViewById(R.id.txtConvert);
+		/*
 		if(!passMode){
 			txtConvert.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
 		}else{
 			txtConvert.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_NORMAL);
-		}		
-		lblSource = (TextView) findViewById(R.id.lblSource);
-		
+		}	
+		*/	
 		mNotifyMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 	}// end create UI
@@ -82,7 +79,6 @@ public class MainActivity extends Activity {
 	 */
 	protected void clearFields(){
 		txtConvert.setText("");
-		lblSource.setText("");
 	}//end clearFields
 
 	@Override
@@ -130,8 +126,6 @@ public class MainActivity extends Activity {
 		String text = txtConvert.getText().toString();
 		if(text.length() <= 0) return;
 		String result = Cyr2Lat.convert(text, mode);
-		lblSource.setText(text);
-		lblSource.setVisibility(showSource ? View.VISIBLE : View.INVISIBLE);
 		txtConvert.setText(result);			
 		showNotification(result,getResources().getString(R.string.conv_result),result);
 		copy2clipboard(result);

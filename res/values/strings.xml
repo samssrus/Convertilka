@@ -4,19 +4,15 @@
     <string name="title_activity_main">Convertilka</string>
 	<string name="btnConvertCaption">Convert it</string>
     <string name="lblConvertCaption">Converted text</string>
-    <string name="lblSourceCaption">* * *</string>
+    <string name="prefConvertingModeHeader">Converting mode</string>
     <string name="prefSafeModeTitle">Safe mode</string>
     <string name="prefSafeModeSummaryText">Safe mode - only the characters (from the text deleted {[:~,.]})</string>
-    <string name="prefShowSourceTitle">Show source text</string>
-    <string name="prefShowSourceSummaryText">show field for source text</string>
+	<string name="prefPassModeHeader">Show as password</string>
     <string name="prefPassModeTitle">Show as password</string>
     <string name="prefPassModeSummaryText">show input field as password</string>
     <string name="prefs">Settings</string>
     <string name="about">About</string>
     <string name="exit">Exit</string>
     <string name="about_text">Convertilka\nVersion 1.0\n2012 Lobko S.V.\nThe program converts the Cyrillic characters in Latin according to the Russian keyboard layout.\nThis is not transliteration.</string>
-    <string name="conv_result">Result</string>
-    <string name="convertingMode">Converting mode</string> 
-    <string name="showSource">Show source text</string> 
-    <string name="passMode">Show as password</string>
+    <string name="conv_result">Result</string>    
 </resources>

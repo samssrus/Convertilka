@@ -33,13 +33,12 @@ public final class R {
         public static final int about_text=0x7f05000e;
         public static final int app_name=0x7f050000;
         public static final int btnConvertCaption=0x7f050003;
+        public static final int clear=0x7f050011;
         public static final int conv_result=0x7f05000f;
         public static final int exit=0x7f05000d;
         public static final int lblConvertCaption=0x7f050004;
         public static final int menu_settings=0x7f050001;
-        public static final int prefConvertingMode=0x7f050011;
         public static final int prefConvertingModeHeader=0x7f050005;
-        public static final int prefPassMode=0x7f050012;
         public static final int prefPassModeHeader=0x7f050008;
         public static final int prefPassModeSummaryText=0x7f05000a;
         public static final int prefPassModeTitle=0x7f050009;

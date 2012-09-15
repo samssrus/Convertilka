@@ -19,6 +19,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.text.ClipboardManager;
 import android.text.InputType;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -36,7 +38,9 @@ public class MainActivity extends Activity {
 	private static final int IDM_ABOUT = 202; // ид для меню О ПРОГРАММЕ
 	private static final int IDM_EXIT  = 203; // ид для меню ВЫХОД
 
-	private static final int DLG_ABOUT = 301; // ид для окна О ПРОГРАММЕ
+	private static final int DLG_ABOUT = 301; // ид для меню ОЧИСТИТЬ
+	
+	private static final int IDM_CLEAR  = 401; // ид для меню ВЫХОД
 
 	private NotificationManager mNotifyMgr;   // менеджер всплывающих подсказок
 	private ClipboardManager clipboard; 	  // менеджер буфера обмена
@@ -64,10 +68,30 @@ public class MainActivity extends Activity {
 	 */
 	public void createUI() {
 		txtConvert = (EditText) findViewById(R.id.txtConvert);
+		registerForContextMenu(txtConvert);
 		mNotifyMgr = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 		clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
 	}// end create UI
 	
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		menu.add(Menu.NONE, IDM_CLEAR, Menu.NONE,
+				getResources().getString(R.string.clear));
+	}//end onCreateContextMenu
+	
+	@Override
+	public boolean onContextItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case IDM_CLEAR:
+			clearFields();
+			break;		
+		default:
+			return false;
+		}// end switch
+		return true;
+	}//end onContextItemSelected
+
 	/**
 	 * процедура для очистки поля ввода
 	 */

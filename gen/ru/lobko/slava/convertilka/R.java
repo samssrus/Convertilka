@@ -10,20 +10,38 @@ package ru.lobko.slava.convertilka;
 public final class R {
     public static final class attr {
     }
+    public static final class color {
+        public static final int app_background=0x7f060000;
+        public static final int dark_red=0x7f060002;
+        public static final int light_red=0x7f060001;
+        public static final int text_tab_selected=0x7f060003;
+        public static final int text_tab_unselected=0x7f060004;
+    }
+    public static final class dimen {
+        public static final int corner_radius=0x7f070000;
+        public static final int tab_space=0x7f070002;
+        public static final int tab_space_plus1=0x7f070003;
+        public static final int tab_space_top=0x7f070001;
+    }
     public static final class drawable {
         public static final int bg=0x7f020000;
-        public static final int greycrn456640=0x7f020001;
-        public static final int ic_action_search=0x7f020002;
-        public static final int ic_launcher=0x7f020003;
+        public static final int bg_tab=0x7f020001;
+        public static final int greycrn456640=0x7f020002;
+        public static final int ic_action_search=0x7f020003;
+        public static final int ic_launcher=0x7f020004;
+        public static final int tab_focus=0x7f020005;
+        public static final int tab_press=0x7f020006;
+        public static final int tab_selected=0x7f020007;
+        public static final int tab_unselected=0x7f020008;
     }
     public static final class id {
-        public static final int btnConvert=0x7f080004;
-        public static final int btnHelp=0x7f080005;
-        public static final int lblAbout=0x7f080000;
-        public static final int lblConvert=0x7f080002;
-        public static final int lblHelp=0x7f080001;
-        public static final int menu_settings=0x7f080006;
-        public static final int txtConvert=0x7f080003;
+        public static final int btnConvert=0x7f0a0004;
+        public static final int btnHelp=0x7f0a0005;
+        public static final int lblAbout=0x7f0a0000;
+        public static final int lblConvert=0x7f0a0002;
+        public static final int lblHelp=0x7f0a0001;
+        public static final int menu_settings=0x7f0a0006;
+        public static final int txtConvert=0x7f0a0003;
     }
     public static final class layout {
         public static final int about_layout=0x7f030000;
@@ -32,7 +50,7 @@ public final class R {
         public static final int main_layout=0x7f030003;
     }
     public static final class menu {
-        public static final int main_layout=0x7f070000;
+        public static final int main_layout=0x7f090000;
     }
     public static final class string {
         public static final int about_text=0x7f050000;
@@ -57,8 +75,8 @@ public final class R {
         public static final int title_activity_main=0x7f050004;
     }
     public static final class style {
-        public static final int AppTheme=0x7f060000;
-        public static final int CustomTabWidget=0x7f060001;
+        public static final int AppTheme=0x7f080000;
+        public static final int CustomTabWidget=0x7f080001;
     }
     public static final class xml {
         public static final int preferences=0x7f040000;

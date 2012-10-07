@@ -2,7 +2,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical" >
 
     <LinearLayout
         android:layout_width="300dp"
@@ -16,32 +16,42 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="@string/lblConvertCaption"
-            android:textSize="20dp" 
-            />
-        
-        <LinearLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:orientation="horizontal" >
+            android:textSize="20dp" />
 
-        <EditText
-            android:id="@+id/txtConvert"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:inputType="text" 
-            android:layout_weight="2">
-            <requestFocus />
-        </EditText>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal" >
+
+            <EditText
+                android:id="@+id/txtConvert"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:inputType="text" >
+
+                <requestFocus />
+            </EditText>
+
+            <ImageButton
+                android:id="@+id/btnConvert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:contentDescription="@string/btnConvertCaption"
+                android:onClick="onConvert"
+                android:src="@drawable/ic_launcher" />
+        </LinearLayout>
 
         <ImageButton
-            android:id="@+id/btnConvert"
+            android:id="@+id/btnHelp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/btnConvertCaption"
-            android:src="@drawable/ic_launcher" 
+            android:layout_gravity="center_horizontal"
             android:background="@null"
-            android:onClick="onConvert"/>
+            android:contentDescription="@string/btnHelpCaption"
+            android:onClick="onHelp"
+            android:src="@android:drawable/ic_menu_help" />
     </LinearLayout>
-        
-</LinearLayout>
+
 </LinearLayout>

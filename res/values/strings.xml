@@ -4,6 +4,7 @@
     <string name="title_activity_main">Convertilka</string>
 	<string name="btnConvertCaption">Convert it</string>
     <string name="lblConvertCaption">Converted text</string>
+    <string name="btnHelpCaption">Help</string>
     <string name="prefConvertingModeHeader">Converting mode</string>
     <string name="prefSafeModeTitle">Safe mode</string>
     <string name="prefSafeModeSummaryText">Safe mode - only the characters (from the text deleted {[:~,.]})</string>

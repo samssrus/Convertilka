@@ -6,17 +6,15 @@ package ru.lobko.slava.convertilka;
  * @version 0.1.2
  */
 
-import android.os.Bundle;
-import android.preference.PreferenceManager;
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.text.ClipboardManager;
 import android.text.InputType;
 import android.view.ContextMenu;
@@ -102,11 +100,11 @@ public class MainActivity extends Activity {
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(Menu.NONE, IDM_PREFS, Menu.NONE,
-				getResources().getString(R.string.prefs));
+				getResources().getString(R.string.prefs)).setIcon(android.R.drawable.ic_menu_preferences);
 		menu.add(Menu.NONE, IDM_HELP, Menu.NONE,
-				getResources().getString(R.string.help));
+				getResources().getString(R.string.help)).setIcon(android.R.drawable.ic_menu_help);
 		menu.add(Menu.NONE, IDM_EXIT, Menu.NONE,
-				getResources().getString(R.string.exit));
+				getResources().getString(R.string.exit)).setIcon(android.R.drawable.ic_lock_power_off);
 		return super.onCreateOptionsMenu(menu);
 	}// end onCreateOptionsMenu
 
@@ -133,6 +131,9 @@ public class MainActivity extends Activity {
 		this.startActivity(helpIntent);
 	}//end showHelp
 	
+	public void onHelp(View v){
+		showHelp();
+	}//end onHelp
 	/**
 	 * процедура вызова окна настроек
 	 */

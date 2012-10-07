@@ -35,12 +35,12 @@ public class MainActivity extends Activity {
 	private static final int NOTIFY_ID = 101; // ид для всплавающих подсказок
 
 	private static final int IDM_PREFS = 201; // ид для меню НАСТРОЙКИ
-	private static final int IDM_ABOUT = 202; // ид для меню О ПРОГРАММЕ
+	private static final int IDM_HELP = 202; // ид для меню ПОМОЩЬ
 	private static final int IDM_EXIT  = 203; // ид для меню ВЫХОД
 
-	private static final int DLG_ABOUT = 301; // ид для меню ОЧИСТИТЬ
+
 	
-	private static final int IDM_CLEAR  = 401; // ид для меню ВЫХОД
+	private static final int IDM_CLEAR  = 401; // ид для меню ОЧИСТИТЬ
 
 	private NotificationManager mNotifyMgr;   // менеджер всплывающих подсказок
 	private ClipboardManager clipboard; 	  // менеджер буфера обмена
@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main_layout);		
 		createUI(); 	//инициализировать основные компоненты программы
-		clearFields();  //очистить поле ввода
+		
 	}// end onCreate
 		
 	@Override
@@ -103,8 +103,8 @@ public class MainActivity extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		menu.add(Menu.NONE, IDM_PREFS, Menu.NONE,
 				getResources().getString(R.string.prefs));
-		menu.add(Menu.NONE, IDM_ABOUT, Menu.NONE,
-				getResources().getString(R.string.about));
+		menu.add(Menu.NONE, IDM_HELP, Menu.NONE,
+				getResources().getString(R.string.help));
 		menu.add(Menu.NONE, IDM_EXIT, Menu.NONE,
 				getResources().getString(R.string.exit));
 		return super.onCreateOptionsMenu(menu);
@@ -116,8 +116,8 @@ public class MainActivity extends Activity {
 		case IDM_PREFS:
 			showPrefs();
 			break;
-		case IDM_ABOUT:
-			showDialog(DLG_ABOUT);
+		case IDM_HELP:
+			showHelp();
 			break;
 		case IDM_EXIT:
 			onExit();
@@ -128,12 +128,16 @@ public class MainActivity extends Activity {
 		return true;
 	}// end onOptionsItemSelected
 	
+	private void showHelp(){
+		Intent helpIntent = new Intent(this, HelpAboutTabsActivity.class);
+		this.startActivity(helpIntent);
+	}//end showHelp
+	
 	/**
 	 * процедура вызова окна настроек
 	 */
 	private void showPrefs(){
-		Intent intent = new Intent();
-		intent.setClass(this, PreferencesActivity.class);
+		Intent intent = new Intent(this, PreferencesActivity.class);
 		this.startActivity(intent);
 	}//end void showPrefs
 	
@@ -167,21 +171,7 @@ public class MainActivity extends Activity {
 		mNotifyMgr.notify(NOTIFY_ID, notification);
 	}//end void showNotification
 	
-	@Override
-	protected Dialog onCreateDialog(int id) {
-    	Dialog dialog;
-        switch(id) {
-        case DLG_ABOUT:
-        	AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        	builder.setMessage(getResources().getString(R.string.about_text));
-        	dialog = builder.create();
-            break;
-        default:
-            dialog = null;
-        }
-        return dialog;
-	}//end function onCreateDialog
-	
+		
 	/**
 	 * процедура копирования результата в буфер обмена
 	 */
@@ -193,6 +183,7 @@ public class MainActivity extends Activity {
 	 * процедура выхода из программы
 	 */
 	private void onExit() {
+		clearFields();  //очистить поле ввода
     	super.onDestroy();
         this.finish();		
 	}//end onExit

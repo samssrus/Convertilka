@@ -4,7 +4,6 @@
     <string name="title_activity_main">Конвертилка</string>
 	<string name="btnConvertCaption">Конвертировать</string>
     <string name="lblConvertCaption">Конвертировать текст</string>
-    <string name="btnHelpCaption">Помощь</string>
 	<string name="prefConvertingModeHeader">Режим конвертирования</string>
     <string name="prefSafeModeTitle">Безопасный режим</string>
     <string name="prefSafeModeSummaryText">только буквы (из текста удаляются {[:~,.]})</string>

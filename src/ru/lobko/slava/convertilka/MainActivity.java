@@ -44,9 +44,8 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.main_layout);		
-		createUI(); 	//инициализировать основные компоненты программы
-		
+		setContentView(R.layout.main_layout);			
+		createUI(); 	//инициализировать основные компоненты программы		
 	}// end onCreate
 		
 	@Override
@@ -74,6 +73,10 @@ public class MainActivity extends Activity {
 			ContextMenuInfo menuInfo) {
 		menu.add(Menu.NONE, IDM_CLEAR, Menu.NONE,
 				getResources().getString(R.string.clear));
+		menu.add(Menu.NONE, IDM_PREFS, Menu.NONE,
+				getResources().getString(R.string.prefs));
+		menu.add(Menu.NONE, IDM_HELP, Menu.NONE,
+				getResources().getString(R.string.help));
 	}//end onCreateContextMenu
 	
 	@Override
@@ -82,6 +85,12 @@ public class MainActivity extends Activity {
 		case IDM_CLEAR:
 			clearFields();
 			break;		
+		case IDM_PREFS:
+			showPrefs();
+			break;
+		case IDM_HELP:
+			showHelp();
+			break;
 		default:
 			return false;
 		}// end switch
@@ -140,6 +149,10 @@ public class MainActivity extends Activity {
 		Intent intent = new Intent(this, PreferencesActivity.class);
 		this.startActivity(intent);
 	}//end void showPrefs
+	
+	public void onPrefs(View v){
+		showPrefs();
+	}//end onHelp
 	
 	/**
 	 * процедура обработки нажатия на кнопку КОНВЕРТИРОВАТЬ 

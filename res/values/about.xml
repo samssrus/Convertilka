@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="about_text">Convertilka\nVersion 2.0\n2012 Lobko S.V.\nThe program converts the Cyrillic characters in Latin according to the Russian keyboard layout.\nThis is not transliteration.</string>
+    <string name="about_text">Convertilka\nVersion 3.0\n2012 Lobko S.V.</string>
 </resources>

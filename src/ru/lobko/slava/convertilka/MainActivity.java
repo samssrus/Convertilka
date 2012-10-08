@@ -35,8 +35,6 @@ public class MainActivity extends Activity {
 	private static final int IDM_PREFS = 201; // ид для меню НАСТРОЙКИ
 	private static final int IDM_HELP = 202; // ид для меню ПОМОЩЬ
 	private static final int IDM_EXIT  = 203; // ид для меню ВЫХОД
-
-
 	
 	private static final int IDM_CLEAR  = 401; // ид для меню ОЧИСТИТЬ
 
@@ -134,6 +132,7 @@ public class MainActivity extends Activity {
 	public void onHelp(View v){
 		showHelp();
 	}//end onHelp
+	
 	/**
 	 * процедура вызова окна настроек
 	 */

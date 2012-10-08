@@ -1,4 +1,5 @@
-assets
-bin
+assets/*.*
+bin/*.*
+gen/*.*
 .settings
 .project

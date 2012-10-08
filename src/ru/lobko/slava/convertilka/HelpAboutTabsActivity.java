@@ -12,6 +12,7 @@ import android.widget.TabHost.TabSpec;
 public class HelpAboutTabsActivity extends TabActivity {
 	
 	private static final int IDM_PREFS = 201; // ид для меню НАСТРОЙКИ
+	private static final int IDM_HOME = 204; // ид для меню НАСТРОЙКИ
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class HelpAboutTabsActivity extends TabActivity {
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
+		menu.add(Menu.NONE, IDM_HOME, Menu.NONE,
+				getResources().getString(R.string.home)).setIcon(R.drawable.ic_launcher);
 		menu.add(Menu.NONE, IDM_PREFS, Menu.NONE,
 				getResources().getString(R.string.prefs)).setIcon(android.R.drawable.ic_menu_preferences);
 		return super.onCreateOptionsMenu(menu);
@@ -45,6 +48,9 @@ public class HelpAboutTabsActivity extends TabActivity {
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
+		case IDM_HOME:
+			showMain();
+			break;
 		case IDM_PREFS:
 			showPrefs();
 			break;		
@@ -54,6 +60,11 @@ public class HelpAboutTabsActivity extends TabActivity {
 		return true;
 	}//end onOptionsItemSelected
 
+	private void showMain(){
+		Intent intent = new Intent(this, MainActivity.class);
+		this.startActivity(intent);
+	}//end void showMain
+	
 	/**
 	 * процедура вызова окна настроек
 	 */

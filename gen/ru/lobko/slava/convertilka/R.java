@@ -44,6 +44,7 @@ public final class R {
         public static final int exit=0x7f050010;
         public static final int help=0x7f05000f;
         public static final int help_text=0x7f050001;
+        public static final int home=0x7f050014;
         public static final int lblConvertCaption=0x7f050006;
         public static final int menu_settings=0x7f050003;
         public static final int prefConvertingModeHeader=0x7f050008;

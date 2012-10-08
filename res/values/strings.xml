@@ -11,11 +11,10 @@
 	<string name="prefPassModeHeader">Protection mode</string>
     <string name="prefPassModeTitle">Show as password</string>
     <string name="prefPassModeSummaryText">show input field as password</string>
-    <string name="prefs">Settings</string>
-    <string name="help">Help</string>
+    <string name="prefs">Settings</string>    
     <string name="exit">Exit</string>    
     <string name="conv_result">Result</string>   
     <string name="resultCopy2Clipboard">Result copy to clipboard</string>
     <string name="clear">Clear</string>
-    <string name="home">Home</string>
+    <string name="home">Home</string>    
 </resources>

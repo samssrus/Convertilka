@@ -22,12 +22,12 @@ public class HelpAboutTabsActivity extends TabActivity {
 		TabHost tabHost = getTabHost();
 
 		TabSpec helpTab = tabHost.newTabSpec("Help");
-		helpTab.setIndicator("Help", getResources().getDrawable(android.R.drawable.ic_menu_help));
+		helpTab.setIndicator(getResources().getString(R.string.help), getResources().getDrawable(android.R.drawable.ic_menu_help));
 		Intent helpIntent = new Intent(this, HelpActivity.class);
 		helpTab.setContent(helpIntent);
 
 		TabSpec aboutTab = tabHost.newTabSpec("About");
-		aboutTab.setIndicator("About", getResources().getDrawable(android.R.drawable.ic_menu_info_details));
+		aboutTab.setIndicator(getResources().getString(R.string.about), getResources().getDrawable(android.R.drawable.ic_menu_info_details));
 		Intent aboutIntent = new Intent(this, AboutActivity.class);
 		aboutTab.setContent(aboutIntent);
 
@@ -62,6 +62,7 @@ public class HelpAboutTabsActivity extends TabActivity {
 
 	private void showMain(){
 		Intent intent = new Intent(this, MainActivity.class);
+		intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 		this.startActivity(intent);
 	}//end void showMain
 	

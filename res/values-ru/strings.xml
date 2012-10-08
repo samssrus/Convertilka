@@ -11,8 +11,7 @@
 	<string name="prefPassModeHeader">Режим защиты</string>
     <string name="prefPassModeTitle">Показывать как пароль</string>
     <string name="prefPassModeSummaryText">скрывать результат за звездочками</string>
-    <string name="prefs">Настройки</string>
-    <string name="help">Помощь</string>
+    <string name="prefs">Настройки</string>    
     <string name="exit">Выход</string>    
     <string name="conv_result">Результат:</string> 
     <string name="resultCopy2Clipboard">Результат скопирован в буфер обмена</string> 

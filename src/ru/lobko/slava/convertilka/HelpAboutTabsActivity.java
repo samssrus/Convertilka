@@ -1,8 +1,5 @@
 package ru.lobko.slava.convertilka;
 
-/**
- * попытка покрасить табы http://ondrejcermak.info/programovani/custom-tabs-in-android-tutorial/comment-page-1/
- */
 
 import android.app.TabActivity;
 import android.content.Intent;

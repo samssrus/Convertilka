@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="about">About</string>
-    <string name="about_text">Convertilka\nVersion 3.0\n2012 Lobko S.V.</string>
+    <string name="about_text">Convertilka\nVersion 3.2\n2012-2013 Lobko S.V.</string>
 </resources>

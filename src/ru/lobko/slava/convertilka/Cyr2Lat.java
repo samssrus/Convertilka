@@ -1,7 +1,7 @@
 package ru.lobko.slava.convertilka;
 
 /**
- * Cyr2Lat - класс для конвертирования кириллических символов в латинские.
+ * Cyr2Lat - класс для конвертирования кириллических символов в латинские и обратно.
  * Если переключившись на латинскую раскладку набирать символы "Б","Ю","Х","Ъ",
  * "Ё","Ж","Э", то будут набраны ,.[]`;' (или <>{}~:" при нажатом Shift) - эти 
  * символы как правило запрещены для использования в паролях.
@@ -11,15 +11,13 @@ package ru.lobko.slava.convertilka;
  * Небезопасный режим - "Б" в ">" или "Ъ" в "}" или "жаба" в ";f,f" 
  * Безопасный режим   - "Б" в ""  или "Ъ" в ""  или "жаба" в "ff" 
  * @author samssrus (Svyatoslav Lobko)
- * @version 0.1.1
+ * @version 2.0
  */
 
 public class Cyr2Lat {
 
 	private static String rus = new String("ЙйЦцУуКкЕеНнГгШшЩщЗзХхЪъФфЫыВвАаПпРрОоЛлДдЖжЭэЯяЧчСсМмИиТтЬьБбЮюЁё");
-	private static char[] eng = {'Q','q','W','w','E','e','R','r','T','t','Y','y','U','u','I','i','O','o','P','p','{','[','}',']',
-		'A','a','S','s','D','d','F','f','G','g','H','h','J','j','K','k','L','l',':',';','\"','\'',
-		'Z','z','X','x','C','c','V','v','B','b','N','n','M','m','<',',','>','.','~','`'};
+	private static String eng = new String("QqWwEeRrTtYyUuIiOoPp{[}]AaSsDdFfGgHhJjKkLl:;\"'ZzXxCcVvBbNnMm<,>.~`");
 	private static String notSafe = "([\"'<>,\\.;:\\{\\}\\[\\]~`'])";
 	
 	public Cyr2Lat(){}//end constructor
@@ -53,12 +51,13 @@ public class Cyr2Lat {
 		char[] textChars = text.toCharArray();  //переводим входную строку в массив символов
 		int length = text.length();				//подсчитываем количество символов в строке
 		for(int i=0; i<length; i++){
-			int k = rus.indexOf(textChars[i]);
-			if(k != -1){ 	//если символ кирилический то конвертируем его в латинский
-				convertedText.append(eng[k]);						
-			}else{ 			//если символ латинский или цифра то просто добавляем его
-				convertedText.append(textChars[i]);				
-			}//end if
+			if(rus.indexOf(textChars[i]) != -1 ){
+				convertedText.append(eng.charAt(rus.indexOf(textChars[i])));
+			}else if(eng.indexOf(textChars[i]) != -1 ){
+				convertedText.append(rus.charAt(eng.indexOf(textChars[i])));
+			}else{
+				convertedText.append(textChars[i]);
+			}
 		}//end for
 		return convertedText.toString();
 	}//end cyr2lat

@@ -57,6 +57,7 @@ public final class R {
         public static final int prefs=0x7f05000f;
         public static final int resultCopy2Clipboard=0x7f050012;
         public static final int title_activity_main=0x7f050006;
+        public static final int txtConvertHintCaption=0x7f050015;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;

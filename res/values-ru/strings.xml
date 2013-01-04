@@ -16,4 +16,5 @@
     <string name="resultCopy2Clipboard">Результат скопирован в буфер обмена</string> 
     <string name="clear">Очистить</string>  
     <string name="home">В начало</string>
+    <string name="txtConvertHintCaption">введите текст</string> 
 </resources>
